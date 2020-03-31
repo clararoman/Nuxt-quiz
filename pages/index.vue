@@ -1,12 +1,15 @@
 <template>
-  <div class="container">
-    <b-col sm="12" lg="8">I am a volcano</b-col>
-  </div>
+  <b-container>
+    <b-col class="column"></b-col>
+  </b-container>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.column {
+  background-color: #e8e8e8;
+}
 </style>
