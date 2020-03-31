@@ -11,5 +11,6 @@ export default {};
 <style lang="scss" scoped>
 .column {
   background-color: #e8e8e8;
+  height: 2em;
 }
 </style>
