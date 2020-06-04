@@ -1,3 +1,9 @@
+import axios from 'axios'
+let dynamicRoutes = () => {
+  return axios.get('https://opentdb.com/api.php?amount=20').then(res => {
+    return res.data.map(category => `/category/${category.id}`)
+  })
+}
 
 export default {
   mode: 'universal',
@@ -12,8 +18,12 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" }
     ]
+  },
+  generate: {
+    routes: dynamicRoutes
   },
   /*
   ** Customize the progress-bar color
@@ -23,6 +33,10 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/bootstrap/bootstrap-config.scss',
+    '~assets/scss/fonts.scss',
+    '~assets/scss/variables.scss'
+
   ],
   /*
   ** Plugins to load before mounting the App
@@ -33,13 +47,19 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules
   */
   modules: [
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/style-resources',
+    'nuxt-svgicon'
   ],
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
+  },
   /*
   ** Build configuration
   */
