@@ -142,9 +142,13 @@ export default {
 
 <style lang="scss">
 .quiz-wrapper {
-  .option-wrapper > div {
-    background-color: #262626;
-    color: white;
+  margin: 2rem;
+  .option-wrapper {
+    padding: 2rem;
+    button {
+      padding: 2rem 0;
+      font-weight: 700;
+    }
   }
   .controls {
     position: relative;
