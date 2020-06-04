@@ -1,12 +1,12 @@
 import axios from 'axios'
 let dynamicRoutes = () => {
   return axios.get('https://opentdb.com/api.php?amount=20').then(res => {
-    return res.data.map(category => `/category/${category.id}`)
+    return res.data.results.map(category => `/category/${category.id}`)
   })
 }
 
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */
