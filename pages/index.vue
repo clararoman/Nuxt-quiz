@@ -37,14 +37,14 @@
 
 <script>
 // import ProjectFilter from "@/components/ProjectFilter.vue";
-import projects from "@/assets/projects/projectArray.json";
-import image from "@/assets/IMG_3357.jpg";
+// import projects from "@/assets/projects/projectArray.json";
+// import image from "@/assets/IMG_3357.jpg";
 
 export default {
   data() {
     return {
-      projectList: projects,
-      profilePic: image,
+      // projectList: projects,
+      // profilePic: image,
       underConstruction: true
     };
   },
@@ -53,11 +53,11 @@ export default {
   },
   computed: {
     projects() {
-      return;
+      // return;
     }
   },
   mounted() {
-    this.$store.dispatch("projects/getProjects");
+    // this.$store.dispatch("projects/getProjects");
   }
   // updated() {
   //   if (this.filteredProjects == null || this.filteredProjects.length < 1) {
@@ -96,7 +96,7 @@ export default {
     left: -2rem;
     color: #e8e8e8;
     .img-wrapper {
-      background-image: url("../assets/IMG_3357.jpg");
+      // background-image: url("../assets/IMG_3357.jpg");
       height: 200px;
       width: 200px;
       background-size: cover;
