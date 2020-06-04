@@ -3,7 +3,7 @@
     <h2>Choose your category</h2>
     <div class="row">
       <div class="col-3" v-for="(category, i) in sortedArray" :key="i">
-        <div>
+        <div class="category">
           <nuxt-link :to="'/category/'+category.id">
             <b-button pill size="sm" class="col-12 choose-category">{{category.name}}</b-button>
           </nuxt-link>
@@ -60,9 +60,13 @@ export default {
 <style lang="scss">
 .category-wrapper {
   position: relative;
+  margin: 2rem;
   h2 {
     margin: 2rem 0;
     text-align: center;
+  }
+  .category {
+    margin: 0.5rem 0;
   }
   button.choose-category {
     padding: 1rem;
